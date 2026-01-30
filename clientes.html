@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>PROVSOFT · Clientes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --azul:#00416A;
+  --azul2:#0c6cbd;
+  --card:#ffffff;
+  --shadow:0 8px 24px rgba(0,0,0,.15);
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,var(--azul),var(--azul2));
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:20px;
+  max-width:1100px;
+  margin:auto;
+  box-shadow:var(--shadow);
+}
+
+h1{
+  color:var(--azul);
+  margin-bottom:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+input,select,button{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+button{
+  background:var(--azul);
+  color:white;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:8px;
+  font-size:13px;
+  text-align:center;
+}
+
+th{
+  background:var(--azul);
+  color:white;
+}
+
+.doc-btn{
+  background:#0c6cbd;
+  padding:6px 10px;
+  font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>📁 PROVSOFT · Clientes</h1>
+
+  <div class="grid">
+    <input id="nombre" placeholder="Nombre / Razón Social">
+    <input id="rfc" placeholder="RFC">
+    <input id="regimen" placeholder="Régimen">
+    <input id="email" placeholder="Email">
+    <input id="telefono" placeholder="Teléfono">
+    <input id="calle" placeholder="Calle">
+    <input id="numExt" placeholder="No. Exterior">
+    <input id="colonia" placeholder="Colonia">
+    <input id="municipio" placeholder="Municipio">
+    <input id="estado" placeholder="Estado">
+    <input id="cp" placeholder="CP">
+    <input id="pais" placeholder="País">
+  </div>
+
+  <br>
+  <button onclick="guardarCliente()">➕ Guardar Cliente</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>RFC</th>
+        <th>Email</th>
+        <th>Docs</th>
+      </tr>
+    </thead>
+    <tbody id="tablaClientes"></tbody>
+  </table>
+</div>
+
+<input type="file" id="fileInput" hidden>
+
+<script type="module" src="./clientes.js"></script>
+</body>
+</html>
